@@ -1,4 +1,6 @@
 'use strict';
+
+
 const Seattle={
     name:'Seattle',
     address:`2901 3rd avenue #300, Seattle`,
@@ -12,6 +14,7 @@ const Seattle={
         this.cookiesPerHour=estimateSales(this)
     },
 };
+
 const Tokyo={
     name:'Tokyo',
     address:`1 Chome 1-2 Oshiage, Sumida City, Tokyo 121-8634`,
@@ -25,6 +28,7 @@ const Tokyo={
         this.cookiesPerHour=estimateSales(this)
     },
 }
+
 const Dubai={
     name:'Dubai',
     address:`1 Sheikh Mohammed bin Rashid Blvd - Dubai`,
@@ -38,6 +42,7 @@ const Dubai={
         this.cookiesPerHour=estimateSales(this)
     },
 }
+
 const Paris={
     name:'Paris',
     address:`Champ de Mars, 5 Avenue Antole France,75007 Paris`,
@@ -51,6 +56,7 @@ const Paris={
         this.cookiesPerHour=estimateSales(this)
     },
 }
+
 const Lima={
     name:'Lima',
     address:`Ca.Gral. Borgoño cuadra 8, Miraflores 15074`,
@@ -64,12 +70,14 @@ const Lima={
         this.cookiesPerHour=estimateSales(this)
     },
 }
+
 const hours =[`6am`,`7am`,`8am`,`9am`,`10am`,`11am`,`12pm`,`1pm`,`2pm`,`3pm`,`4pm`,`5pm`,`6pm`,`7pm`];
 const stores =[Seattle,Tokyo,Dubai,Paris,Lima];
 
 function generarNumeroRandom(min, max) {
     return Math.round(Math.random() * (max - min) + min);
 };
+
 function estimateSales(store){
     const sale=[];
     for(let i =0;i<hours.length;i++){
@@ -79,6 +87,7 @@ function estimateSales(store){
     }
     return sale;
 };
+
 function renderSales(store){
     let total=0;
     const root=document.getElementById('root');
@@ -100,6 +109,7 @@ function renderSales(store){
     totalItems.textContent=`total ${total} cookies`;
     list.appendChild(totalItems);
 }
+
 function renderIndex(store){
     const fill=document.getElementById('fill');
     const location=document.createElement('section');
@@ -118,12 +128,14 @@ function renderIndex(store){
     addressInfo.textContent= `Location: ${store.address}`;
     location.appendChild(addressInfo);
 };
+
 function runApplication(store){
     for(let i=0;i<stores.length;i++){
         stores[i].estimate();
         renderSales(stores[i]);
     }
 };
+
 function runIndex(store){
     for(let i=0;i<stores.length;i++){
         renderIndex(stores[i]);
