@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ventas</title>
-    <link rel="ResetSheet" href="/css/reset.css">
+    <link rel="Stylesheet" href="/css/reset.css">
     <link rel="Stylesheet" href="/css/style.css">
 </head>
 <body>
@@ -14,10 +14,26 @@
         </h1>
         <nav>
             <a href="/index.html">Home</a>
-            <a href="/pages/sales.html">Sales Data</a>
+            <a href="/pages/sales.html">Sales</a>
         </nav>
     </header>
     <main>
+        <section id="storeFormSection">
+        <form id="newStore" action="">
+            <fieldset>
+                <legend>Añade nueva ubicacion</legend>
+                    <label for="locationName">Location Name</label>
+                    <input id="locationName" type="text" name="locationName" required>
+                    <label for="minCustomersPerHour">Minimo clientes por hora</label>
+                    <input id="minCustomersPerHour" type="number" required>
+                    <label for="maxCustomersPerHour">Maximo clientes por hora</label>
+                    <input id="maxCustomersPerHour" type="number" required>
+                    <label for="avgCookiesPerSale">Clientes promedio por venta</label>
+                    <input id="avgCookiesPerSale" type="number" required>
+                    <button type="submit">Click para añadir</button>
+            </fieldset>
+        </form>
+        </section>
         <section id="sales-table"></section>
     </main>
     <footer>
